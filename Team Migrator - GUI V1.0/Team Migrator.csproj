@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Team_Migrator</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Azure-DevOps-Long-Logo-980x179.png" />
+    <None Remove="DES2-art-scale-2_00x.jpg" />
+    <None Remove="logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Azure-DevOps-Long-Logo-980x179.png" />
+    <Resource Include="DES2-art-scale-2_00x.jpg" />
+    <Resource Include="logo.png" />
+  </ItemGroup>
+
+</Project>

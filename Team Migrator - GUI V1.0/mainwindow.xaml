@@ -1,0 +1,61 @@
+﻿<Window 
+        x:Name="MainWindowMigrator" x:Class="Team_Migrator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Team_Migrator"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="490" Width="800">
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="3*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="58"/>
+            <RowDefinition Height="59"/>
+            <RowDefinition Height="159"/>
+            <RowDefinition Height="214"/>
+
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Left" Width="800" Fill="#FFEAEAEA" Margin="0,10,0,2" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Width="800" Fill="#FFEAEAEA" Margin="0,9,0,10" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBlock x:Name="TeamMigratorTitle" Margin="256,18,0,0" TextWrapping="Wrap" Text="Team Migrator" Height="34" Width="242" FontSize="24" FontFamily="Corbel Light" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="ADOLogo" HorizontalAlignment="Left" Height="42" Width="232" Source="C:/App/Team Migrator/Team Migrator/logo.png" Margin="10,10,0,0" Stretch="UniformToFill" VerticalAlignment="Top"/>
+        <TextBlock x:Name="PatText" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="135" Height="38" Padding="5,0,0,0"><Run Text="Personal Access Token:"/><LineBreak/><Run Text="(for target org)"/></TextBlock>
+        <Button x:Name="ConnectButton" Grid.Column="1" Content="Sign in" Grid.Row="1" Background="#FF3554B7" Foreground="White" FontFamily="Calibri" FontSize="14" BorderBrush="#FF3A4B8C" Padding="1,1,1,1" Margin="10,0,10,0" MinHeight="24" VerticalAlignment="Center" ToolTip="Sign in to Azure CLI" />
+        <TextBlock x:Name="SourceOrgText" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Source Ogranization Name:" VerticalAlignment="Top" Width="216" Height="24" Padding="5,5,0,0"/>
+        <TextBox x:Name="SourceOrgInput" HorizontalAlignment="Left" Margin="10,22,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="24" Padding="5,3,0,0" MinHeight="24" ToolTip="Enter source organization name" IsEnabled="False"/>
+        <TextBlock x:Name="TargetOrgText" HorizontalAlignment="Left" Margin="411,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Target Ogranization Name:" VerticalAlignment="Top" Width="216" Height="24" Padding="5,5,0,0"/>
+        <TextBox x:Name="TargetOrgInput" HorizontalAlignment="Left" Margin="411,22,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="24" Padding="5,3,0,0" MinHeight="24" Grid.ColumnSpan="2" ToolTip="Enter target organization name" IsEnabled="False"/>
+        <Button x:Name="TargetOrgRefresh" Content="q" Grid.Row="2" Background="#FF3554B7" Foreground="White" FontFamily="Webdings" FontSize="20" BorderBrush="#FF3A4B8C" Padding="0,0,1,0" Margin="52,22,9,0" MinHeight="24" VerticalAlignment="Top" Grid.Column="1" ToolTip="Validate the organization" IsEnabled="False" />
+        <Button x:Name="SourceOrgRefresh" Content="q" Grid.Row="2" Background="#FF3554B7" Foreground="White" FontFamily="Webdings" FontSize="20" BorderBrush="#FF3A4B8C" Padding="0,0,1,0" Margin="330,22,291,0" MinHeight="24" VerticalAlignment="Top" ToolTip="Validate the organization" IsEnabled="False" />
+        <TextBlock x:Name="SourceProjectText" HorizontalAlignment="Left" Margin="10,45,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Source Project:" VerticalAlignment="Top" Width="216" Height="24" Padding="5,5,0,0"/>
+        <TextBlock x:Name="TargetProjectText" HorizontalAlignment="Left" Margin="411,45,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Target Project:" VerticalAlignment="Top" Width="216" Height="24" Padding="5,5,0,0"/>
+        <ComboBox x:Name="SourceProjectInput" HorizontalAlignment="Left" Margin="10,69,0,0" Grid.Row="2" VerticalAlignment="Top" Width="379" Padding="5,4,0,0" Height="24" ToolTip="Select the source project" IsEnabled="False"/>
+        <ComboBox x:Name="TargetProjectInput" HorizontalAlignment="Left" Margin="411,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="379" Padding="5,4,0,0" Height="24" Grid.ColumnSpan="2" ToolTip="Select the target project" IsEnabled="False"/>
+        <TextBlock x:Name="SourceTeamText" HorizontalAlignment="Left" Margin="10,93,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Source Team:" VerticalAlignment="Top" Width="216" Height="24" Padding="5,5,0,0"/>
+        <TextBlock x:Name="TargetTeamText" HorizontalAlignment="Left" Margin="411,93,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Target Team:" VerticalAlignment="Top" Width="216" Height="24" Padding="5,5,0,0"/>
+        <ComboBox x:Name="SourceTeamInput" HorizontalAlignment="Left" Margin="10,117,0,0" Grid.Row="2" VerticalAlignment="Top" Width="379" Padding="5,4,0,0" Height="24" ToolTip="Select the source team" IsEnabled="False"/>
+        <ComboBox x:Name="TargetTeamInput" HorizontalAlignment="Left" Margin="411,116,0,0" Grid.Row="2" VerticalAlignment="Top" Width="379" Padding="5,4,0,0" Height="24" Grid.ColumnSpan="2" ToolTip="Select the target team" IsEnabled="False"/>
+        <TextBlock x:Name="TerminalText" HorizontalAlignment="Left" Margin="11,31,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Terminal" VerticalAlignment="Top" Width="115" Height="25" Padding="5,5,0,0"/>
+        <TextBox x:Name="TerminalTextBox" HorizontalAlignment="Left" Margin="11,62,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="779" Grid.ColumnSpan="2" Height="130" Padding="5,5,0,0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" Focusable="False" AllowDrop="False" />
+        <Button x:Name="StartButton" Grid.Column="1" Content="Start" Grid.Row="3" Background="#FF3554B7" Foreground="White" FontFamily="Calibri" FontSize="14" BorderBrush="#FF3A4B8C" Padding="1,1,1,1" Margin="10,6,10,184" MinHeight="24" ToolTip="Start the migration process" IsEnabled="False"/>
+        <Button x:Name="PasteButton" Content="3" Grid.Row="1" Background="#FF3554B7" Foreground="White" FontFamily="Wingdings" FontSize="18" BorderBrush="#FF3A4B8C" Padding="0,0,1,0" Margin="636,0,0,0" MinHeight="24" VerticalAlignment="Center" Height="24" Width="44" ToolTip="Paste" />
+        <TextBox x:Name="PatTextBox" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="Enter the personal access token here using the paste button..." VerticalAlignment="Center" Width="478" Height="24" Margin="150,0,0,0" Padding="0,3,0,0" IsEnabled="False"/>
+        <Button x:Name="ValidateButton" Content="Validate" Grid.Row="3" Background="#FF3554B7" Foreground="White" FontFamily="Calibri" FontSize="14" BorderBrush="#FF3A4B8C" Padding="1,1,1,1" Margin="548,6,52,0" MinHeight="24" VerticalAlignment="Top" Height="24" Width="80" ToolTip="Validate the inputs before starting the migration" />
+        <Button x:Name="ResetButton" Content="`" Grid.Row="3" Background="#FF3554B7" Foreground="White" FontFamily="Webdings" BorderBrush="#FF3A4B8C" Padding="1,1,1,1" Margin="630,6,26,0" MinHeight="24" VerticalAlignment="Top" Height="24" ToolTip="Reset the forms  - Click once to reactivate the forms - Click twice to clear the forms " FontSize="22" Width="24" />
+        <CheckBox x:Name="ManualConfirmationCheck" Content="Manual Confirmation" HorizontalAlignment="Left" Margin="133,11,0,0" Grid.Row="3" VerticalAlignment="Top"  ToolTip="User needs to confrim each user while the migration is running"/>
+        <CheckBox x:Name="CreateLogFileCheck" Content="Create Log File" HorizontalAlignment="Left" Margin="11,11,0,0" Grid.Row="3" VerticalAlignment="Top"  ToolTip="If checked, the process will create a log file containing details of the migration and users list" IsChecked="True"/>
+        <Button x:Name="OpenLogButton" Content="1" Grid.Row="3" Background="#FF3554B7" Foreground="White" FontFamily="Wingdings" BorderBrush="#FF3A4B8C" Padding="0,0,1,0" MinHeight="24" VerticalAlignment="Top" Height="24" ToolTip="Open the log folder" Width="24" Margin="656,6,0,0" FontSize="18" />
+        <TextBlock HorizontalAlignment="Left" Margin="86,39,0,3" TextWrapping="Wrap" Text="v 1.0" Grid.Column="1"/>
+
+
+
+    </Grid>
+</Window>
